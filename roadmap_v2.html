@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Head of Creative Strategy Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0f0f3;
+  --surface: #ffffff;
+  --surface2: #f5f5f8;
+  --border: rgba(0,0,0,0.06);
+  --border2: rgba(0,0,0,0.10);
+  --green: #1a7f4b;
+  --green-bright: #21a05f;
+  --green-dim: rgba(26,127,75,0.08);
+  --green-line: rgba(26,127,75,0.15);
+  --text: #111113;
+  --muted: #6a6a70;
+  --muted2: #a8a8b2;
+  --shadow-card: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.07);
+  --shadow-table: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.09);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  padding: 72px 80px 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 1200px; margin: 0 auto; }
+
+/* ── HEADER ─────────────────────────────────────────────────────── */
+.header { margin-bottom: 28px; }
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.headline {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.10;
+  letter-spacing: -.04em;
+  max-width: 720px;
+  margin-bottom: 12px;
+}
+
+.headline em { color: var(--green); font-style: normal; }
+
+.subline {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: -.01em;
+}
+
+/* ── SECTION LABEL ──────────────────────────────────────────────── */
+.section-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--muted2);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+  opacity: .7;
+}
+
+/* ── PRIORITIES ─────────────────────────────────────────────────── */
+.priorities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border2);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 56px;
+  box-shadow: var(--shadow-card);
+}
+
+.pcard {
+  background: var(--surface);
+  padding: 32px 28px;
+}
+
+.pcard:first-child {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  border-bottom: 1.5px solid var(--border2);
+  padding: 32px 32px 32px 36px;
+  position: relative;
+}
+
+/* green left accent on card 01 */
+.pcard:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--green) 0%, var(--green-bright) 100%);
+  border-radius: 0;
+}
+
+.pnum {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ptitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.03em;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.pkr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.pkr-tag {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--green-dim);
+  color: var(--green);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--green-line);
+}
+
+.pbody {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.psub {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted2);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.psub-action {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+/* ── ROADMAP ────────────────────────────────────────────────────── */
+.roadmap { margin-bottom: 72px; }
+
+.rm-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-table);
+  border: 0.5px solid var(--border2);
+}
+
+.rm-head {
+  display: grid;
+  grid-template-columns: 72px 1fr 1fr 1fr;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border2);
+}
+
+.rm-head-cell {
+  padding: 15px 26px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.rm-head-cell:not(:last-child) { border-right: 0.5px solid var(--border2); }
+
+.rm-body-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 1fr 1fr;
+  border-bottom: 0.5px solid var(--border2);
+  background: var(--surface);
+}
+
+.rm-body-row:last-child { border-bottom: none; }
+
+.rm-label {
+  background: var(--surface2);
+  border-right: 0.5px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.rm-label-text {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.rm-cell {
+  background: var(--surface);
+  padding: 26px 26px;
+  vertical-align: top;
+}
+
+.rm-cell:not(:last-child) { border-right: 0.5px solid var(--border2); }
+
+/* highlight last column */
+.rm-cell:last-child {
+  background: rgba(26,127,75,0.025);
+}
+
+.row-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9.5px;
+  font-weight: 600;
+  background: var(--surface2);
+  color: var(--muted);
+  border: 0.5px solid var(--border2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* result tag gets green tint */
+.rm-cell:last-child .row-tag {
+  background: var(--green-dim);
+  color: var(--green);
+  border-color: var(--green-line);
+}
+
+.rm-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.025em;
+  line-height: 1.35;
+}
+
+/* result title green */
+.rm-cell:last-child .rm-title { color: var(--green); }
+
+.rm-dot {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 6px;
+}
+
+.rm-dot-mark {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  opacity: .45;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.rm-dot span {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.rm-result {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.65;
+  letter-spacing: -.01em;
+}
+
+@media print {
+  @page { size: A3 landscape; margin: 10mm; }
+  html, body { width: 420mm; height: 297mm; }
+  body { padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { max-width: 100%; transform-origin: top left; transform: scale(0.62); width: 160%; }
+  .priorities { break-inside: avoid; }
+  .roadmap { break-inside: avoid; }
+  .pcard { break-inside: avoid; }
+  .rm-body-row { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">CPS Strategy Map</div>
+    <div class="headline">Система, которая позволяет<br>создавать <em>быстро</em></div>
+    <div class="subline">Olymptrade · Denis Kucherenko</div>
+  </div>
+
+  <div style="margin-bottom:48px;padding:28px 36px;background:linear-gradient(135deg,rgba(26,127,75,0.04) 0%,rgba(26,127,75,0.01) 100%);border:0.5px solid rgba(26,127,75,0.18);border-radius:16px;box-shadow:0 2px 12px rgba(26,127,75,0.07);position:relative;overflow:hidden;">
+<div style="font-size:9px;font-weight:700;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;opacity:.7;">Ориентир</div>
+    <div style="font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.035em;line-height:1.3;max-width:680px;">Задавать тренды через гибкие и успешные бизнес-модели, опережающие рынок</div>
+    <div style="width:32px;height:2px;background:var(--green);border-radius:1px;margin:16px 0 12px;opacity:.5;"></div>
+    <div style="font-size:12.5px;font-weight:400;color:var(--muted);line-height:1.65;">Из этого вытекают все приоритеты CPS. План дополняет текущую работу отдела, а не заменяет её.</div>
+  </div>
+
+  <div class="section-label">Стратегические приоритеты → видение и план</div>
+  <div class="priorities">
+    <div class="pcard">
+      <div class="pnum">01</div>
+      <div class="ptitle">Тестировать новые бизнес-модели</div>
+      <div class="pkr"><span class="pkr-tag">Бренд &lt;1 мес</span><span class="pkr-tag">Запуск &lt;2 нед</span></div>
+      <div class="psub">Сейчас</div>
+      <div class="pbody">Каждый новый запуск это отдельный проект с нуля. Нет переиспользуемых компонентов. Появятся клоакинговые приложения и разные продуктовые конфигурации под отдельные гео, каждая из них требует своей коммуникации и высокой скорости запуска. Креатив подключается на этапе производства, минуя этап создания концепции. Если концепция требует доработки, итерация может удлиниться.</div>
+      <div class="psub-action">Что делаю</div>
+      <div class="pbody">Выстраиваю модульную систему сборки брендов: brand kit-конструктор и шаблонную библиотеку материалов. Сдвигаю точку подключения команды на этап формулировки гипотезы вместе с продуктом и PMM.</div>
+    </div>
+    <div class="pcard">
+      <div class="pnum">02</div>
+      <div class="ptitle">Новый бренд</div>
+      <div class="pkr"><span class="pkr-tag">Запуск → сент. 2026</span></div>
+      <div class="psub">Сейчас</div>
+      <div class="pbody">К сентябрю будет запуск нового бренда, при этом ключевые элементы ещё не зафиксированы.</div>
+      <div class="psub-action">Что делаю</div>
+      <div class="pbody">Строю бренд-платформу с нуля: позиционирование, айдентика, TOV. На её основе готовлю полный пакет материалов под запуск: UA-креативы, онбординг, CRM. Всё это ложится в модульную систему, чтобы следующий бренд запускался по готовой базе.</div>
+    </div>
+    <div class="pcard">
+      <div class="pnum">03</div>
+      <div class="ptitle">Новые гео + усиление текущих</div>
+      <div class="pkr"><span class="pkr-tag">IN · BR · MY · AE · KZ · JP</span></div>
+      <div class="psub">Сейчас</div>
+      <div class="pbody">В фокусе маркетинга 6 рынков. В рамках единого подхода эффективность теряется. При этом рынки вроде Индии и Японии требуют принципиально разной глубины проработки и разных решений.</div>
+      <div class="psub-action">Что делаю</div>
+      <div class="pbody">Ввожу трёхуровневую модель приоритизации. Для Индии и ОАЭ кастомный креатив, для Малайзии и Казахстана адаптация лучших решений, для Японии и Бразилии аутсорс/инфлюенс до момента, пока не будут подтверждены ключевые гипотезы. Это позволяет команде фокусироваться там, где отдача выше.</div>
+    </div>
+  </div>
+
+  <div class="roadmap">
+    <div class="section-label">План по приоритетам</div>
+    <div class="rm-wrap">
+      <div class="rm-head">
+        <div class="rm-head-cell"></div>
+        <div class="rm-head-cell">Q2</div>
+        <div class="rm-head-cell">Q3</div>
+        <div class="rm-head-cell">к сентябрю</div>
+      </div>
+      <div class="rm-body-row">
+        <div class="rm-label"><span class="rm-label-text" style="background:none;color:#1d1d1f;border:none">Бизнес-модели</span></div>
+        <div class="rm-cell">
+          <div class="row-tag">→ система</div>
+          <div class="rm-title">Brand kit-конструктор и шаблонная библиотека</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Фиксируем модульную архитектуру</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Pre-approved форматы под разные конфигурации</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ тестирование</div>
+          <div class="rm-title">Система работает на реальных запусках</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Клоакинговые приложения получают коммуникацию по системе</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>CPS подключается на этапе формулировки гипотезы</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ результат</div>
+          <div class="rm-title">Инфраструктура под любой новый запуск готова</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Модульная система готова для любого следующего бренда</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Итерации не удлиняются из-за позднего входа креатива</span></div>
+        </div>
+      </div>
+      <div class="rm-body-row">
+        <div class="rm-label"><span class="rm-label-text" style="background:none;color:#1d1d1f;border:none">Новый бренд</span></div>
+        <div class="rm-cell">
+          <div class="row-tag">→ фундамент</div>
+          <div class="rm-title">Бренд-платформа: позиционирование, айдентика, TOV</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Закрываем все открытые вопросы по бренду</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ производство</div>
+          <div class="rm-title">Полный пакет материалов под запуск</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>UA-креативы, онбординг, CRM под новый бренд</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Все форматы адаптированы под каналы</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ запуск</div>
+          <div class="rm-title">Новый бренд запущен</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Бренд в рынке: IN и ID на старте</span></div>
+        </div>
+      </div>
+      <div class="rm-body-row">
+        <div class="rm-label"><span class="rm-label-text" style="background:none;color:#1d1d1f;border:none">Гео</span></div>
+        <div class="rm-cell">
+          <div class="row-tag">→ матрица</div>
+          <div class="rm-title">Распределение рынков по тирам зафиксировано</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Индия и ОАЭ: продолжаем запускать кастомные промо</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Малайзия и Казахстан: фиксируем подход и ответственных</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ исполнение</div>
+          <div class="rm-title">Tier 1 в полном кастоме, Tier 2 на шаблонах</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Малайзия и Казахстан работают по адаптациям</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Собраны данные по Японии и Бразилии, адаптация подхода под эти гео</span></div>
+        </div>
+        <div class="rm-cell">
+          <div class="row-tag">→ результат</div>
+          <div class="rm-title">Ресурс распределён, фокус сохранён</div>
+          <div class="rm-dot" style="margin-top:12px"><div class="rm-dot-mark"></div><span>Каждый рынок получает правильный уровень внимания</span></div>
+          <div class="rm-dot"><div class="rm-dot-mark"></div><span>Инхаус сфокусирован там где отдача выше</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
